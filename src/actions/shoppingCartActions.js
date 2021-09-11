@@ -2,7 +2,7 @@
 export const fetchShoppingCart = (userId) => {
     return (dispatch) => {
     dispatch({ type: 'LOADING_SHOPPING_CART'})
-    fetch(`http://localhost:3000/shopping_carts/${userId}`)
+    fetch(`https://web-mart-backend.herokuapp.com/shopping_carts/${userId}`)
     .then(resp => resp.json())
     .then( json => {
       dispatch({ type: 'ADD_SHOPPING_CART', shoppingCart: json})
@@ -24,7 +24,7 @@ export const fetchShoppingCart = (userId) => {
         },
         body: JSON.stringify(newItem)
     }
-      fetch(`http://localhost:3000/shopping_carts/${currentUser.id}`, configObj)
+      fetch(`https://web-mart-backend.herokuapp.com/shopping_carts/${currentUser.id}`, configObj)
       .then(resp => {
           if (resp.ok) {
               return resp
@@ -56,7 +56,7 @@ export const removeFromCart = (user, item) => {
       },
       body: JSON.stringify(itemId)
   }
-  fetch(`http://localhost:3000/shopping_carts/${userId}`, configObj)
+  fetch(`https://web-mart-backend.herokuapp.com/shopping_carts/${userId}`, configObj)
   .then(resp => {
     if (resp.ok) {
       dispatch({type: "REMOVE_FROM_CART", payload: item})

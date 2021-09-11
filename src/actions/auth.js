@@ -16,7 +16,7 @@ const getToken = () => {
 };
 export const checkAuth = () => {
     return (dispatch) => {
-      return fetch("http://localhost:3000/current_user", {
+      return fetch("https://web-mart-backend.herokuapp.com/current_user", {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
@@ -33,7 +33,7 @@ export const checkAuth = () => {
   };
 export const signupUser = (credentials) => {
     return (dispatch) => {
-      return fetch("http://localhost:3000/signup", {
+      return fetch("https://web-mart-backend.herokuapp.com/signup", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -60,7 +60,7 @@ export const signupUser = (credentials) => {
   };
   export const loginUser = (credentials) => {
     return (dispatch) => {
-      return fetch("http://localhost:3000/login", {
+      return fetch("https://web-mart-backend.herokuapp.com/login", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -91,7 +91,7 @@ export const signupUser = (credentials) => {
   
   export const logoutUser = () => {
     return (dispatch) => {
-      return fetch("http://localhost:3000/logout", {
+      return fetch("https://web-mart-backend.herokuapp.com/logout", {
         method: "DELETE",
         headers: {
           Accept: "application/json",
